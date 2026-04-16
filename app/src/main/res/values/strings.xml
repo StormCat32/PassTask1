@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PassTask1</string>
+    <string name="player_1_point">Player 1 Point</string>
+    <string name="reset_game">Reset Game</string>
+    <string name="player_2_point">Player 2 Point</string>
+</resources>

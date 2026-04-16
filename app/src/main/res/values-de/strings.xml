@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PassTask1</string>
+    <string name="player_1_point">Spieler 1 Punkt</string>
+    <string name="reset_game">Spiel Zurücksetzen</string>
+    <string name="player_2_point">Spieler 2 Punkt</string>
+</resources>
