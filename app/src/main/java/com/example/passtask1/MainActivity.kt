@@ -1,5 +1,6 @@
 package com.example.passtask1
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -41,19 +42,37 @@ class MainActivity : AppCompatActivity() {
         val playerOneDisplay = findViewById<TextView>(R.id.playerOneDisplay)
         val playerTwoDisplay = findViewById<TextView>(R.id.playerTwoDisplay)
 
+        val pressSound = MediaPlayer.create(this,R.raw.select,)
+        val confettiSound = MediaPlayer.create(this,R.raw.confetti,)
+
         playerOneButton.setOnClickListener{
             playerOneScore ++
             playerOneDisplay.text = playerOneScore.toString()
+            if (playerOneScore>15){
+                playerOneScore = 15
+                Log.i("GAME","Player 1 wins")
+                confettiSound.start()
+            } else {
+                pressSound.start()
+            }
         }
         playerTwoButton.setOnClickListener{
             playerTwoScore ++
             playerTwoDisplay.text = playerTwoScore.toString()
+            if (playerTwoScore>15){
+                playerTwoScore = 15
+                Log.i("GAME","Player 2 wins")
+                confettiSound.start()
+            } else {
+                pressSound.start()
+            }
         }
         resetButton.setOnClickListener{
             playerTwoScore = 0
             playerOneScore = 0
             playerOneDisplay.text = playerOneScore.toString()
             playerTwoDisplay.text = playerTwoScore.toString()
+            pressSound.start()
         }
     }
 
